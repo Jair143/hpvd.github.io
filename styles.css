@@ -1,0 +1,118 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    color: white;
+}
+
+/* Hero Section with Enhanced Gradient and Overlay */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9aa2, #ff4d6d, #d06f7f, #6a2c8b);
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease infinite;
+    filter: blur(4px);
+    z-index: -1; /* Keep content above background */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Content on top of the background */
+.content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Text shadow to improve readability */
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5); /* Glowing text effect */
+}
+
+p {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.heart {
+    position: absolute;
+    animation: float 6s infinite;
+    width: 50px;
+    height: 50px;
+    fill: rgba(255, 77, 109, 0.8);
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Floating Heart Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-100px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+/* Countdown Timer */
+.countdown {
+    margin-top: 50px;
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);  /* Semi-transparent black background */
+    padding: 10px 20px;  /* Add some padding around the text */
+    border-radius: 5px;  /* Rounded corners */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .heart {
+        width: 40px;
+        height: 40px;
+    }
+
+    .countdown {
+        font-size: 1.5rem;
+    }
+}
+
+.gif-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Adjust the GIF size */
+.gif-container img {
+    max-width: 20%;  /* Adjust as needed */
+    height: auto;    /* Maintains the aspect ratio */
+}
