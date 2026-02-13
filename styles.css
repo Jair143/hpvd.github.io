@@ -116,3 +116,19 @@ p {
     max-width: 20%;  /* Adjust as needed */
     height: auto;    /* Maintains the aspect ratio */
 }
+.content { position: relative; }
+
+.heart{
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  fill: #ff4d6d;   /* important */
+  opacity: 0.7;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float{
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
