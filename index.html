@@ -1,133 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Langlang</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Langlang</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+  <style>
+    :root { --pink:#ff4d6d; --bg:#fff5f7; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Open Sans", system-ui, sans-serif; background: var(--bg); color:#222; }
+    .hero {
+      height: 220px;
+      background: radial-gradient(circle at 30% 30%, #ffe0e7, transparent 55%),
+                  radial-gradient(circle at 70% 40%, #ffd0db, transparent 55%),
+                  linear-gradient(135deg, #fff, #ffe9ef);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .content {
+      max-width: 780px;
+      margin: -60px auto 0;
+      padding: 28px 18px 60px;
+      position: relative;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 26px 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(44px, 6vw, 70px);
+      margin: 0 0 12px;
+      color: #c9184a;
+      font-weight: 400;
+    }
+    p { font-size: 18px; line-height: 1.5; margin: 10px 0 0; }
+    .gif-wrap { margin: 16px auto 10px; max-width: 360px; }
+    img { width: 100%; border-radius: 14px; display:block; }
+    .countdown { margin-top: 18px; font-weight: 600; }
+    #timer { color: #c9184a; }
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    /* hearts */
+    .heart {
+      position: absolute;
+      width: 30px; height: 30px;
+      fill: var(--pink);
+      opacity: .65;
+      animation: float 3.6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+  </style>
 </head>
-<body class="bg-light">
 
-    <!-- Hero Section -->
-    <div class="hero"></div>
+<body>
+  <div class="hero"></div>
 
-    <!-- Content Section -->
-    <div class="content container text-center py-5">
-        <h1 class="mb-4">Happy Valentine's Day, My Love!</h1>
+  <main class="content">
+    <div class="card">
+      <h1>Happy Valentine's Day, My Love!</h1>
 
-        <!-- GIF Container -->
-        <div class="gif-container mb-4">
-            <img src="penguin.gif" alt="GIF" class="img-fluid rounded" />
-        </div>
+      <div class="gif-wrap">
+        <!-- If penguin.gif is missing, you’ll still see the alt text box -->
+        <img src="penguin.gif" alt="(Place penguin.gif in the same folder as this file)" />
+      </div>
 
-        <p class="lead">
-            Thank you for being my safe place, my favorite person, and my best day.
-            I choose you—today, tomorrow, and always.
-        </p>
+      <p>
+        Thank you for being my safe place, my favorite person, and my best day.
+        I choose you—today, tomorrow, and always.
+      </p>
 
-        <!-- Floating Hearts -->
-        <svg class="heart" style="top: 10%; left: 20%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="heart" style="top: 30%; left: 60%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="heart" style="top: 60%; left: 10%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="heart" style="top: 80%; left: 80%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-
-        <!-- Countdown Timer -->
-        <div class="countdown mt-4 fw-semibold" id="countdown">
-            Time left until our special moment: <span id="timer"></span>
-        </div>
+      <div class="countdown" id="countdown">
+        Time left until our special moment: <span id="timer">--:--:--</span>
+      </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <!-- hearts -->
+    <svg class="heart" style="top: 6%; left: 12%" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart" style="top: 16%; left: 82%; animation-delay:.5s" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart" style="top: 70%; left: 10%; animation-delay:1s" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart" style="top: 78%; left: 86%; animation-delay:1.4s" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  </main>
 
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Langlang</title>
+  <script>
+    // Countdown to Feb 14, 2026 00:00 local time (change if you want)
+    const target = new Date(2026, 1, 14, 0, 0, 0); // month is 0-based: 1 = February
+    const el = document.getElementById("timer");
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    function tick(){
+      const now = new Date();
+      let ms = target - now;
+      if (ms <= 0) { el.textContent = "It’s time! 💖"; return; }
 
-    <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-light">
-
-    <!-- Hero Section -->
-    <div class="hero"></div>
-
-    <!-- Content Section -->
-    <div class="content container text-center py-5">
-        <h1 class="mb-4">Happy Valentine's Day, My Love!</h1>
-
-        <!-- GIF Container -->
-        <div class="gif-container mb-4">
-            <img src="penguin.gif" alt="GIF" class="img-fluid rounded" />
-        </div>
-
-        <p class="lead">
-            Thank you for being my safe place, my favorite person, and my best day.
-            I choose you—today, tomorrow, and always.
-        </p>
-
-        <!-- Floating Hearts -->
-        <svg class="heart" style="top: 10%; left: 20%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="heart" style="top: 30%; left: 60%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="heart" style="top: 60%; left: 10%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="heart" style="top: 80%; left: 80%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-
-        <!-- Countdown Timer -->
-        <div class="countdown mt-4 fw-semibold" id="countdown">
-            Time left until our special moment: <span id="timer"></span>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-    </script>
-
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+      const s = Math.floor(ms / 1000);
+      const hh = String(Math.floor(s / 3600)).padStart(2,"0");
+      const mm = String(Math.floor((s % 3600) / 60)).padStart(2,"0");
+      const ss = String(s % 60).padStart(2,"0");
+      el.textContent = `${hh}:${mm}:${ss}`;
+      requestAnimationFrame(()=>setTimeout(tick, 250));
+    }
+    tick();
+  </script>
 </body>
 </html>
